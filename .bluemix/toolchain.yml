@@ -17,9 +17,9 @@ template:
     - ui-repo
   info:
     git url: >-
-      [https://github.com/open-toolchain/microservices-toolchain-hosted](https://github.com/open-toolchain/microservices-toolchain-hosted)
+      [https://github.com/hmagph/gh-micros-nodra](https://github.com/hmagph/gh-micros-nodra)
     git branch: >-
-      [master](https://github.com/open-toolchain/microservices-toolchain-hosted/tree/master)
+      [master](https://github.com/hmagph/gh-micros-nodra/tree/master)
 toolchain:
   template:
     getting_started:
