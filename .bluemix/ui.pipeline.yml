@@ -95,7 +95,7 @@ stages:
           grunt_result=$?
         fi
 
-        idra --publishtestresult --filelocation=./xunit.xml --type=fvt
+        #idra --publishtestresult --filelocation=./xunit.xml --type=fvt
 
         if [ $grunt_result -ne 0 ]; then
            exit $grunt_result
@@ -129,10 +129,6 @@ stages:
     value: PRODUCTION
     type: text
   jobs:
-  - name: Production Gate
-    type: tester
-    extension_id: ibm.devops.services.pipeline.dra_devops_gate
-    CRITERIA: PRODUCTION Deployment Checks (func test only)
   - name: Blue/Green Deploy
     type: deployer
     target:

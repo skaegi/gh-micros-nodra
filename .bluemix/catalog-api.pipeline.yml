@@ -38,8 +38,8 @@ stages:
         grunt_result=$?
         set -e
 
-        idra --publishtestresult --filelocation=./tests/server/mochatest.xml --type=unittest
-        idra --publishtestresult --filelocation=./tests/server/coverage/reports/coverage-summary.json --type=code
+        #idra --publishtestresult --filelocation=./tests/server/mochatest.xml --type=unittest
+        #idra --publishtestresult --filelocation=./tests/server/coverage/reports/coverage-summary.json --type=code
 
         if [ $grunt_result -ne 0 ]; then
            exit $grunt_result
@@ -83,10 +83,6 @@ stages:
     value: '80'
     type: text
   jobs:
-  - name: Staging Gate
-    type: tester
-    extension_id: ibm.devops.services.pipeline.dra_devops_gate
-    CRITERIA: STAGING Deployment Checks
   - name: Deploy
     type: deployer
     target:
@@ -144,7 +140,7 @@ stages:
           grunt_result=$?
         fi
 
-        idra --publishtestresult --filelocation=./xunit.xml --type=fvt
+        #idra --publishtestresult --filelocation=./xunit.xml --type=fvt
 
         if [ $grunt_result -ne 0 ]; then
            exit $grunt_result
@@ -175,10 +171,6 @@ stages:
     value: master
     type: text
   jobs:
-  - name: Production Gate
-    type: tester
-    extension_id: ibm.devops.services.pipeline.dra_devops_gate
-    CRITERIA: PRODUCTION Deployment Checks
   - name: Blue/Green Deploy
     type: deployer
     target:
