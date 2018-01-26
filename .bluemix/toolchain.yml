@@ -135,7 +135,7 @@ form:
       ui-app-name: '{{services.ui-repo.parameters.repo_name}}'
     schema:
       $ref: deploy.json
-  git:
+  githubpublic:
     parameters:
       catalog-api-repo_name: 'catalog-api-{{toolchain.name}}'
       catalog-api-repo_url: 'https://github.com/open-toolchain/Microservices_CatalogAPI'
